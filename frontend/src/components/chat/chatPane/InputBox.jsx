@@ -12,12 +12,16 @@ function InputBox(props) {
         if (query) {
             props.setMessages(prev => [...prev, <MessageBox content={query} bot={false} key={Math.floor(Math.random() * 10000)} />])
             setQuery('');
-            axios.post('/query', { query: query })
+            axios.get((props.isDoctor ? '/chatDoctor' : "/chatUser"), {
+                params: {
+                text: query
+            }
+        })
                 .then(res => res.data)
                 .then(res => {
                     console.log(res);
                     if (res) {
-                        props.setMessages(prev => [...prev, <MessageBox content={res.output} bot={true} key={Math.floor(Math.random() * 10000)} />])
+                        props.setMessages(prev => [...prev, <MessageBox content={res.content} bot={true} key={Math.floor(Math.random() * 10000)} />])
                     }
                 })
         }

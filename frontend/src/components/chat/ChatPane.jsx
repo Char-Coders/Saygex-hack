@@ -1,5 +1,6 @@
-import React, {useRef, useState} from "react";
+import React, {useEffect, useRef, useState} from "react";
 import InputBox from "./chatPane/InputBox.jsx";
+import axios from "axios";
 
 function ChatPane({isDoctor}) {
 
@@ -28,7 +29,7 @@ function ChatPane({isDoctor}) {
                 <div id={"Messageanchor"}/>
             </div>
 
-            <InputBox setMessages={setMessages}/>
+            <InputBox setMessages={setMessages} isDoctor={isDoctor} />
         </div>
     )
 }
