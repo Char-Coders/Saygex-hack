@@ -20,13 +20,13 @@ def reset():
 @app.route('/chatUser')
 def chatUser():
     text = flask.request.args['text']
-    resp = chatbot_doc.run(text)
+    resp = chatbot.run(text)
     return {'content': resp['content']}
 
 @app.route('/chatDoctor')
 def chatDoctor():
     text = flask.request.args['text']
-    resp = chatbot.run(text)
+    resp = chatbot_doc.run(text)
     return {'content': resp['content']}
 
 # def main():
