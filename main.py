@@ -1,11 +1,9 @@
-import asyncio
-import flask
 from chatbot import Inference
 
 
 chatbot = Inference()
 
-def chat(text):
+def chat(text) :
     resp = chatbot.run(text)
     return resp
         

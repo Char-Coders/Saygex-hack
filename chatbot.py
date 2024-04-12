@@ -15,7 +15,7 @@ class Inference:
             messages=self.messages
         )
         self.messages.append(response)
-        return response.choices[0].message
+        return response.choices[0].message.to_json()
         
     
     
