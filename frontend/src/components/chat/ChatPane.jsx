@@ -1,8 +1,8 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, {useRef, useState} from "react";
 import InputBox from "./chatPane/InputBox.jsx";
 
-function ChatPane() {
-    
+function ChatPane({isDoctor}) {
+
     const messagesEndRef = useRef(null);
     const [messages, setMessages] = useState([]);
 
@@ -10,15 +10,22 @@ function ChatPane() {
     return (
         <div className="chatPaneContainer">
             <div className="introTextContainer">
-                <h1>Start a new chat with <span>M</span>edi<span>M</span>ate!.</h1>
-                <h3>Your personal healthcare chatbot</h3>
+                {isDoctor ? <>
+                        <h1>Welcome doctor, I am <span>M</span>edi<span>M</span>ate!.</h1>
+                        <h3>Your personal advisor chatbot</h3>
+                    </> :
+                    <>
+                        <h1>Start a new chat with <span>M</span>edi<span>M</span>ate!.</h1>
+                        <h3>Your personal healthcare chatbot</h3>
+                    </>
+                }
             </div>
 
             <div className="MessagesContainer">
                 <div className="MessagesContainerScroll">
                     {messages}
                 </div>
-                <div id={"Messageanchor"} />
+                <div id={"Messageanchor"}/>
             </div>
 
             <InputBox setMessages={setMessages}/>

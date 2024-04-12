@@ -20,9 +20,9 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route exact path={"/"} element={<RootPage><Hero/><Home/><Use/><About/><Contact/><Footer/></RootPage>}/>
-          <Route path={"/login"} element={<Login />} />
-          <Route path={"/register"} element={<Signup />} />
-          <Route path={"/chat"} element={<RootPage><MainChat /></RootPage>}/>
+          <Route path={"/login"} element={<RootPage><Login/></RootPage>} />
+          <Route path={"/register"} element={<Signup/>} />
+          <Route path={"/chat/:chatType"} element={<RootPage><MainChat /></RootPage>}/>
         </Routes>
       </BrowserRouter>
     </>
