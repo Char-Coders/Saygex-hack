@@ -2,7 +2,7 @@ from g4f.client import Client
 
 class Inference:
     def __init__(self, doctor: bool = False):
-        sysPrompt = {'role': 'system', 'content': 'You are an AI assistant that is tasked to help the user in working through a project, generating the procedure and debugging code.'}
+        sysPrompt = {'role': 'system', 'content': 'You are an AI assistant that is tasked to help the user in working through a project, generating the procedure and debugging code. Always respond in english.'}
         if doctor:
             sysPrompt['content'] = 'You are a virtual assistant designed to assist doctors in a medical setting. Your primary role is to provide accurate and up-to-date information to help doctors make informed decisions about patient care. Your responses should be concise, factual, and relevant to the medical field. You should also be able to perform tasks such as retrieving patient records, suggesting treatment options based on symptoms, and providing general medical knowledge.'
         self.messages = [sysPrompt]
