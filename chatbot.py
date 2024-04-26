@@ -14,7 +14,7 @@ class Inference:
     def run(self, text: str):
         self.messages.append({'role': 'user', 'content': text})
         response = self.client.chat.completions.create(
-            model="gpt-4-turbo",
+            model="gemini",
             messages=self.messages
         )
         response = response.choices[0].message.to_json()
