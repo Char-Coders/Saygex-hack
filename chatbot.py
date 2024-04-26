@@ -16,7 +16,7 @@ class Inference:
         response = self.client.chat.completions.create(
             model="gpt-3.5-turbo",
             messages=self.messages,
-            provider=g4f.Provider.DuckDuckGo,
+            provider=g4f.Provider.FreeGpt,
         )
         response = response.choices[0].message.to_json()
         self.messages.append(response)
