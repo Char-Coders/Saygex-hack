@@ -16,6 +16,7 @@ def uwu():
 @app.route('/reset')
 def reset():
     chatbot = Inference()
+    return 'Done boss'
 
 @app.route('/chatUser')
 def chatUser():
